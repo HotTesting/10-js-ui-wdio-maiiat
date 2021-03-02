@@ -1,0 +1,31 @@
+{
+  "name": "10-js-ui-wdio-maiiat",
+  "version": "1.0.0",
+  "description": "Demonstration project",
+  "scripts": {
+    "test": "wdio wdio.conf.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StartITProtractorJS/10-js-ui-wdio-maiiat.git"
+  },
+  "author": "Maiia Talanchuk <talantm89@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/StartITProtractorJS/10-js-ui-wdio-maiiat/issues"
+  },
+  "homepage": "https://github.com/StartITProtractorJS/10-js-ui-wdio-maiiat#readme",
+  "dependencies": {
+    "@wdio/cli": "^7.0.9"
+  },
+  "devDependencies": {
+    "@wdio/local-runner": "^7.0.9",
+    "@wdio/mocha-framework": "^7.0.7",
+    "@wdio/spec-reporter": "^7.0.7",
+    "@wdio/sync": "^7.0.9",
+    "chromedriver": "^88.0.0",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.2",
+    "wdio-chromedriver-service": "^7.0.0"
+  }
+}

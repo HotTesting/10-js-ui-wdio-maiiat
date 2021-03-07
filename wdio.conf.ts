@@ -18,8 +18,9 @@ export const config: WebdriverIO.Config = {
     // directory is where your package.json resides, so `wdio` will be called from there.
     //
     specs: [
-       './test/specs/**/*.ts'
-        // './test/specs/lesson3_class.ts'
+       // './test/specs/**/*.ts'
+       //  './test/specs/lesson2_class.ts'
+         './test/specs/lesson2_homeWork.ts'
     ],
     // Patterns to exclude.
     exclude: [

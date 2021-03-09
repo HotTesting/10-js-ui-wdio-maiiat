@@ -120,10 +120,10 @@ describe("Items search", function () {
         const content = $('#content');
         expect(content).toBeDisplayed({wait: 2000});
 
-        const searchField = $('input[class="form-control input-lg"]');
+        const searchField = $('input.form-control.input-lg');
         searchField.setValue('macbook');
 
-        const searchButton = $('span[class=input-group-btn]');
+        const searchButton = $('span.input-group-btn');
         searchButton.click();
 
         expect(content.$('h2')).toHaveText('Products meeting the search criteria');
@@ -145,7 +145,7 @@ describe("Items search", function () {
         const searchField = $('input[class="form-control input-lg"]');
         searchField.setValue('nonexistvalue');
 
-        const searchButton = $('span[class=input-group-btn]');
+        const searchButton = $('span.input-group-btn');
         searchButton.click();
 
         const items = $$('div.product-layout.product-grid');

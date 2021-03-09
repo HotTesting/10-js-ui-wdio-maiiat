@@ -21,7 +21,9 @@ export const config: WebdriverIO.Config = {
        // './test/specs/**/*.ts'
        //  './test/specs/lesson2_class.ts'
        //   './test/specs/lesson4_class_hooks.ts'
-        './test/specs/lesson2_homeWork.ts'
+       //  './test/specs/lesson4_homeWork.ts'
+        // './test/specs/lesson2_homeWork.ts'
+        './test/specs/**/lesson5_class_checkout.ts'
     ],
     // Patterns to exclude.
     exclude: [
@@ -94,7 +96,7 @@ export const config: WebdriverIO.Config = {
     // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
     // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
     // gets prepended directly.
-    baseUrl: 'http://ip-6147.proline.net.ua:10082/',
+    baseUrl: 'http://93.126.97.71:10082/',
     //
     // Default timeout for all waitFor* commands.
     waitforTimeout: 10000,
@@ -203,8 +205,9 @@ export const config: WebdriverIO.Config = {
     /**
      * Function to be executed before a test (in Mocha/Jasmine) starts.
      */
-    // beforeTest: function (test, context) {
-    // },
+    beforeTest: function (test, context) {
+        browser.url('/')
+    },
     /**
      * Hook that gets executed _before_ a hook within the suite starts (e.g. runs before calling
      * beforeEach in Mocha)
@@ -221,6 +224,7 @@ export const config: WebdriverIO.Config = {
      * Function to be executed after a test (in Mocha/Jasmine).
      */
     // afterTest: function(test, context, { error, result, duration, passed, retries }) {
+    //     browser.reloadSession()
     // },
 
 

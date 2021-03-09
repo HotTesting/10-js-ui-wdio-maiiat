@@ -142,7 +142,7 @@ describe("Items search", function () {
         const content = $('#content');
         expect(content).toBeDisplayed({wait: 2000});
 
-        const searchField = $('input[class="form-control input-lg"]');
+        const searchField = $('input.form-control input-lg');
         searchField.setValue('nonexistvalue');
 
         const searchButton = $('span.input-group-btn');

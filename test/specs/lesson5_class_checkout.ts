@@ -1,8 +1,8 @@
-import {ProductCategoryPage} from "../../applications/pages/ProductCategoryPage";
-import {CheckoutPage} from "../../applications/pages/checkout";
-import {ConfirmationPage} from "../../applications/pages/checkout/ConfirmationPage";
-import {HomePage} from "../../applications/pages/HomePages";
-import {App} from "../../applications/application";
+import {ProductCategoryPage} from "../applications/pages/ProductCategoryPage";
+import {CheckoutPage} from "../applications/pages/checkout";
+import {ConfirmationPage} from "../applications/pages/checkout/ConfirmationPage";
+import {HomePage} from "../applications/pages/HomePages";
+import {App} from "../applications/application";
 
 
 describe('Item', function () {

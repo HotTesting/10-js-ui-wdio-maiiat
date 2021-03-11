@@ -1,4 +1,4 @@
-import {shared} from './user'
+import {shared} from './lesson4_class_sb_user'
 
 describe('Admin', function () {
 

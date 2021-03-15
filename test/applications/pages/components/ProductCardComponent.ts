@@ -1,15 +1,6 @@
 
-
-// export class ProductCardComponent {
-//     private root: WebdriverIO.Element
-//
-//     constructor(root: WebdriverIO.Element) {
-//         this.root = root
-//     }
-
 export class ProductCardComponent {
     constructor(private root: WebdriverIO.Element) {
-
     }
 
     title(): string {
@@ -17,19 +8,27 @@ export class ProductCardComponent {
     }
 
     addToCart() {
-        browser.pause(3000)
-        const addToCartButton = this.root.$('button[onclick*="cart.add"] i.fa-shopping-cart')
-        expect(addToCartButton).toBeVisible({ message: 'Expected add to cart button to be visible' })
-        addToCartButton.click()
-        browser.pause(500)
+        const addToCartButton = this.root.$('button[onclick*="cart.add"] i.fa-shopping-cart');
+        expect(addToCartButton).toBeVisible({ message: 'Expected add to cart button to be visible' });
+        addToCartButton.click();
     }
 
     addToWishList() {
-        throw new Error('Not yet implemented')
+        const addToWishList = this.root.$('button[data-original-title="Add to Wish List"]');
+        expect(addToWishList).toBeVisible({ message: 'Expected add to wishlist button to be visible' });
+        addToWishList.click();
     }
 
-    compareThisProduct() {
-        throw new Error('Not yet implemented')
+    addToComparison() {
+        const compareButton = this.root.$('button[data-original-title="Compare this Product"]');
+        expect(compareButton).toBeVisible({ message: 'Expected add to compare button to be visible' });
+        compareButton.click();
+    }
+
+    getPriseWithTax(): number {
+        const price = this.root.$('div.caption p.price');
+        expect(price).toBeVisible({ message: 'Expected add to compare button to be visible' });
+        return parseInt(price.getText().substring(price.getText().indexOf("$") + 1 , price.getText().lastIndexOf("E")));
     }
 }
 

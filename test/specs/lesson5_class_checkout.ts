@@ -1,8 +1,8 @@
 import {ProductCategoryPage} from "../applications/pages/ProductCategoryPage";
 import {CheckoutPage} from "../applications/pages/checkout";
 import {ConfirmationPage} from "../applications/pages/checkout/ConfirmationPage";
-import {HomePage} from "../applications/pages/HomePages";
-import {App} from "../applications/application";
+import {HomePage} from "../applications/pages/home/HomePages";
+import {App} from "../applications/Application";
 
 
 describe('Item', function () {
@@ -22,7 +22,7 @@ describe('Item', function () {
         app.checkout.checkoutOptions.selectGuestCheckout()
         app.checkout.checkoutOptions.continue()
 
-        app.checkout.billingDetails.fillBillingDetails({
+        app.checkout.billingDetails.fillBillingDetailsForGuest({
             firstName: 'test',
             lastName: 'test',
             email: `test+${Date.now()}@test.com`,
@@ -42,6 +42,9 @@ describe('Item', function () {
 
         app.checkout.confirmOrder.continue()
 
-        expect(app.confirmation.isOpened()).toBeTruthy()
+        // expect(app.confirmation.isOpened()).toBeTruthy()
+        browser.waitUntil(() => app.confirmation.isOpened(), {
+            timeoutMsg: "Expected confirmation page to be loaded"
+        })
     })
 })

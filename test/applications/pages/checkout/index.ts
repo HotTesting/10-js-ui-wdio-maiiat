@@ -3,6 +3,8 @@ import {BillingDetailsComponent} from "./components/2_BillingDetailsComponent";
 import {DeliveryMethodComponent} from "./components/4_DeliveryMethodComponents";
 import {PaymentMethodComponent} from "./components/5_PaymentMethodComponent";
 import {ConfirmOrderComponent} from "./components/6_ConfirmOrderComponent";
+import {Urls} from "../../Urls";
+import {DeliveryDetailsComponent} from "./components/3_DeliveryDetailsComponent";
 
 export class CheckoutPage {
 
@@ -12,6 +14,10 @@ export class CheckoutPage {
 
     get billingDetails () {
         return new BillingDetailsComponent();
+    }
+
+    get deliveryDetails () {
+        return new DeliveryDetailsComponent();
     }
 
     get deliveryMethod () {
@@ -26,8 +32,7 @@ export class CheckoutPage {
         return new ConfirmOrderComponent();
     }
 
-
     open() {
-        browser.url('index.php?route=checkout/checkout')
+        new Urls().openCheckoutURL();
     }
 }

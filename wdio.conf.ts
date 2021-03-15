@@ -23,7 +23,9 @@ export const config: WebdriverIO.Config = {
        //   './test/specs/lesson4_class_hooks.ts'
        //  './test/specs/lesson4_homeWork.ts'
         // './test/specs/lesson2_homeWork.ts'
-        './test/specs/**/lesson5_class_checkout.ts'
+        // './test/specs/**/lesson5_class_checkout.ts'
+        //   './test/specs/lesson6_class_register.ts'
+         './test/specs/lesson6_homeWork.ts'
     ],
     // Patterns to exclude.
     exclude: [

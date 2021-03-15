@@ -167,6 +167,8 @@ describe('Items', function () {
         expect($('div.alert').getText()).toContain(messages.getPopupSuccessfulMessageOnAddingProductToCart(prductName));
 
         checkout.open();
+        //TODO I don't know why but this test failed time to time without this pause even with browser.waitUntil on 172 row :(
+        browser.pause(500);
         browser.waitUntil(() => checkout.billingDetails.isOpened(), {
             timeoutMsg: "Expected Billing Details component to be loaded"
         });
@@ -202,6 +204,7 @@ describe('Items', function () {
         browser.waitUntil(() => confirmation.isOpened(), {
             timeoutMsg: "Expected confirmation page to be loaded"
         })
+        //TODO Can't understand why I'm receiving such Error:  Unable to load spec files quite likely because they rely on `browser` object that is not fully initialised.
         confirmation.verifyConfirmationPageSuccessfulTextAfterOrderPlacedForRegistredUser();
     })
 
@@ -254,6 +257,8 @@ describe('Items', function () {
         });
         checkout.deliveryDetails.continue();
 
+        //TODO I don't know why but this test failed time to time without this pause even with browser.waitUntil on 267 row :(
+        browser.pause(500);
         browser.waitUntil(() => checkout.deliveryMethod.isOpened(), {
             timeoutMsg: "Expected Delivery Method component to be loaded"
         });
@@ -274,5 +279,6 @@ describe('Items', function () {
             timeoutMsg: "Expected confirmation page to be loaded"
         });
     })
+    //TODO Can't understand why I'm receiving such Error:  Unable to load spec files quite likely because they rely on `browser` object that is not fully initialised.
     confirmation.verifyConfirmationPageSuccessfulTextAfterOrderPlacedForGuest();
 })
